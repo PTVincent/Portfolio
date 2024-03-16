@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker Vincent | Graphic Designer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background-color: #E0F2FE; /* A light blue background */
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+        .portfolio-item, .testimonial-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            background-color: #60A5FA; /* Bright blue */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px; /* Circular edges */
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #3B82F6; /* A slightly darker blue on hover */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+    <header class="bg-gray-900 text-white p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Parker Vincent</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-gray-400">About Me</a></li>
+                    <li><a href="#portfolio" class="hover:text-gray-400">Portfolio</a></li>
+                    <li><a href="#reviews" class="hover:text-gray-400">Reviews</a></li>
+                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-bg text-white py-20">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-2">Creative Designs that Speak Volumes</h2>
+                <p class="mb-4">Bringing Your Ideas to Life with Professional Graphic Design</p>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <p>I am Parker Vincent, a passionate graphic designer with 4 years of experience in freelancing. Skilled in the entire Adobe suite, including Photoshop and Illustrator, and proficient in 3D graphics using Blender and Brush.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
+                <!-- Portfolio items will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="reviews" class="py-20">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4">What Clients Say</h2>
+                <!-- Testimonials will be dynamically loaded or inserted here -->
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+                <form action="#" method="post">
+                    <div class="space-y-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border border-gray-300 rounded-md" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border border-gray-300 rounded-md" required>
+                        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 border border-gray-300 rounded-md" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white p-6 text-center">
+        <p>© 2024 Parker Vincent. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Include the main JavaScript file -->
+    <script src="main.js"></script>
+</body>
+</html>
