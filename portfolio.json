@@ -1,15 +1,50 @@
 [
-    {
-      "title": "Project 1",
-      "image": "url-to-project-image.jpg",
-      "description": "A brief description of Project 1.",
-      "tools": "Photoshop, Illustrator"
-    },
-    {
-      "title": "Project 2",
-      "image": "",
-      "description": "A brief description of Project 2.",
-      "tools": "Blender, Brush"
-    }
-  ]
-  
+  {
+    "title": "ADAM V7",
+    "image": "https://username.github.io/Images/ADAM%20V7.png",
+    "description": "A complex digital art piece showcasing advanced design techniques.",
+    "tools": "Photoshop, Illustrator"
+  },
+  {
+    "title": "Angel",
+    "image": "https://username.github.io/Images/angel.png",
+    "description": "A beautiful, ethereal digital painting of an angel.",
+    "tools": "Photoshop"
+  },
+  {
+    "title": "Crystal Butterfly",
+    "image": "https://username.github.io/Images/crystal%20butterfly%20small.png",
+    "description": "A mesmerizing artwork of a crystal butterfly, symbolizing transformation.",
+    "tools": "Illustrator"
+  },
+  {
+    "title": "Desolate",
+    "image": "https://username.github.io/Images/desolate.png",
+    "description": "A digital painting capturing the essence of desolation.",
+    "tools": "Photoshop"
+  },
+  {
+    "title": "Distracted Driving",
+    "image": "https://username.github.io/Images/distracted%20driving.png",
+    "description": "An impactful piece highlighting the dangers of distracted driving.",
+    "tools": "Photoshop, Illustrator"
+  },
+  {
+    "title": "Frog",
+    "image": "https://username.github.io/Images/frog.png",
+    "description": "A whimsical and colorful illustration of a frog.",
+    "tools": "Photoshop"
+  },
+  {
+    "title": "Gateway 2",
+    "image": "https://username.github.io/Images/gateway%202.png",
+    "description": "A conceptual artwork depicting a mysterious gateway.",
+    "tools": "Blender, Photoshop"
+  },
+  {
+    "title": "Hands",
+    "image": "https://username.github.io/Images/hands.png",
+    "description": "A powerful and emotive digital painting focusing on hands.",
+    "tools": "Photoshop"
+  }
+]
