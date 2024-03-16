@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Project 1",
+      "image": "url-to-project-image.jpg",
+      "description": "A brief description of Project 1.",
+      "tools": "Photoshop, Illustrator"
+    },
+    {
+      "title": "Project 2",
+      "image": "",
+      "description": "A brief description of Project 2.",
+      "tools": "Blender, Brush"
+    }
+  ]
+  
