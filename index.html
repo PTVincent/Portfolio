@@ -833,7 +833,7 @@
                         </div>
                         <div class="contact-info-content">
                             <h4>Email</h4>
-                            <p>parkervincent900@email.com</p>
+                            <p>parkervincent900@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -861,23 +861,6 @@
                             <p><a href="https://www.linkedin.com/in/parker-vincent-aa245a236/" target="_blank">View Profile</a></p>
                         </div>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form" action="mailto:parkervincent900@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -981,25 +964,7 @@
         // Check on scroll
         window.addEventListener('scroll', showTimelineItems);
         
-        // Form Submission (placeholder - would need backend)
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', (e) => {
-            // Form will be submitted via mailto: link
-            // This code still runs but we don't need to prevent default
-            // or show the alert since the mail client will handle it
-            
-            // If you want to add form validation before submission:
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !subject || !message) {
-                e.preventDefault();
-                alert('Please fill in all fields before submitting.');
-            }
-        });
+        // Form Submission - REMOVED as contact form has been removed
         
         // Smooth Scrolling for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
