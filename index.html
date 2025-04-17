@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker Vincent - Portfolio</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #3b82f6;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 2rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, #f0f7ff 0%, #dbeafe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 0 0 60%;
+        }
+        
+        .hero-image {
+            flex: 0 0 35%;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-btns {
+            margin-top: 2rem;
+        }
+        
+        .hero-btns .btn:first-child {
+            margin-right: 1rem;
+        }
+        
+        .typing-text {
+            height: 1.5em;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: var(--light);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            flex: 0 0 calc(50% - 1rem);
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .skill-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Experience/Projects Section - COMPLETELY REVISED */
+        .experience {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Timeline middle line */
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--light-gray);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s;
+            position: relative;
+        }
+        
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Left side items */
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+            padding-right: 50%;
+        }
+        
+        /* Right side items */
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: 50%;
+        }
+        
+        .timeline-content {
+            width: 90%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin: 0 30px;
+        }
+        
+        /* Circle markers - UPDATED: Made larger */
+        .timeline-circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 5px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 10;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive styles for timeline */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .timeline-circle {
+                left: 20px;
+                transform: none;
+                margin-left: 0;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                justify-content: flex-start !important;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 30px;
+                margin-right: 0;
+            }
+            
+            /* Ensure first timeline item's circle aligns with the line */
+            .timeline-item:first-child .timeline-circle {
+                top: 0;
+            }
+        }
+        
+        /* Education Section */
+        .education {
+            background-color: var(--light);
+        }
+        
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+        
+        .education-item {
+            flex: 0 0 calc(50% - 1rem);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-period {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Certification Section */
+        .certifications {
+            background-color: white;
+        }
+        
+        .cert-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+        
+        .cert-item {
+            flex: 0 0 calc(33.333% - 1.5rem);
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .cert-id {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 0 0 calc(40% - 1rem);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info-icon {
+            margin-right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .contact-form {
+            flex: 0 0 calc(60% - 1rem);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            line-height: 40px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            
+            .hero-text, .hero-image {
+                flex: 0 0 100%;
+            }
+            
+            .hero-image {
+                margin-bottom: 2rem;
+            }
+            
+            .skill-category, .education-item {
+                flex: 0 0 100%;
+            }
+            
+            .cert-item {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s;
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-info, .contact-form {
+                flex: 0 0 100%;
+            }
+            
+            .cert-item {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#" class="logo">Parker <span>Vincent</span></a>
+            <div class="mobile-menu" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#skills">Skills</a></li>
+                <li class="nav-item"><a href="#experience">Experience</a></li>
+                <li class="nav-item"><a href="#education">Education</a></li>
+                <li class="nav-item"><a href="#certifications">Certifications</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Parker Vincent</h1>
+                    <h3>Computer Science Student</h3>
+                    <div class="typing-text" id="typing-text"></div>
+                    <p>Detail-oriented Computer Science student with CompTIA A+ certification, skilled in system administration, network configuration, hardware troubleshooting, virtualization, and secure remote access solutions.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">Contact Me</a>
+                        <a href="#experience" class="btn" style="background-color: transparent; color: var(--dark); border: 2px solid var(--primary);">My Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/api/placeholder/400/400" alt="Parker Vincent">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>I am a Computer Science student at Old Dominion University with a passion for technology and problem-solving. My background in business combined with technical expertise allows me to bridge the gap between technical solutions and business needs.</p>
+                <p>I demonstrate exceptional analytical abilities in resolving complex technical issues, reinforced by strong documentation and communication skills. My hands-on experience includes system administration, network configuration, hardware troubleshooting, virtualization, and implementing secure remote access solutions.</p>
+                <p>I am continuously expanding my knowledge in the field of computer science and staying updated with the latest technologies. My goal is to apply my technical skills and business knowledge to create efficient and innovative solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><strong>Operating Systems:</strong> Windows 10/11, Ubuntu Linux, Raspberry Pi OS</li>
+                        <li class="skill-item"><strong>Hardware:</strong> Comprehensive diagnostics, installation, troubleshooting, and maintenance</li>
+                        <li class="skill-item"><strong>Networking:</strong> TCP/IP, DNS configuration, VPN implementation, Zero-trust security</li>
+                        <li class="skill-item"><strong>Virtualization:</strong> Oracle VirtualBox, virtual machine management</li>
+                        <li class="skill-item"><strong>Security:</strong> Network security protocols, authentication methods, secure remote access</li>
+                        <li class="skill-item"><strong>Tools & Software:</strong> Windows PowerShell, Command Prompt, Pi-hole, Tailscale VPN, Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Clear Communication</li>
+                        <li class="skill-item">Analytical Problem-Solving</li>
+                        <li class="skill-item">Project Management</li>
+                        <li class="skill-item">Attention to Detail</li>
+                        <li class="skill-item">Technical Writing & Documentation</li>
+                        <li class="skill-item">Self-Directed Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience/Projects Section - COMPLETELY REVISED -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Experience</h2>
+            </div>
+            <div class="timeline">
+                <!-- Timeline line is now an actual DOM element -->
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 2025</div>
+                        <h3 class="timeline-title">CompTIA A+ Certification</h3>
+                        <ul>
+                            <li>Earned industry-standard CompTIA A+ certification demonstrating proficiency in IT technical support</li>
+                            <li>Mastered hardware installation, configuration, and troubleshooting concepts</li>
+                            <li>Validated knowledge of networking, operating systems, security, and mobile device management</li>
+                            <li>Developed comprehensive understanding of IT operations and technical support fundamentals</li>
+                        </ul>
+                    </div>
+                    <!-- Circle marker is now an actual DOM element -->
+                    <div class="timeline-circle"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2025</div>
+                        <h3 class="timeline-title">Network-Wide Ad Blocking Implementation</h3>
+                        <ul>
+                            <li>Assembled and configured Raspberry Pi 5 with effective thermal management</li>
+                            <li>Installed and optimized Pi-hole for efficient, network-wide ad blocking and DNS management</li>
+                            <li>Implemented static IP addressing, router DNS configurations, and performed rigorous testing for reliability</li>
+                            <li>Authored detailed, user-friendly documentation for ongoing system maintenance and troubleshooting</li>
+                        </ul>
+                    </div>
+                    <!-- Circle marker is now an actual DOM element -->
+                    <div class="timeline-circle"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 2025</div>
+                        <h3 class="timeline-title">Secure Remote Access Implementation</h3>
+                        <ul>
+                            <li>Integrated Tailscale VPN based on zero-trust principles, establishing secure remote network access</li>
+                            <li>Managed DNS configuration, TCP/IP settings, and conducted vulnerability assessments to ensure robust security</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-circle"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2025 - Present</div>
+                        <h3 class="timeline-title">Hardware & System Administration Projects</h3>
+                        <ul>
+                            <li>Converted legacy laptop into operational home server with full network capabilities</li>
+                            <li>Performed system diagnostics, hardware troubleshooting, OS recovery, and installation processes</li>
+                            <li>Set up and secured network storage solutions with customized permissions and robust authentication mechanisms</li>
+                            <li>Documented troubleshooting procedures and system maintenance comprehensively, enhancing technical clarity and future support</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>Old Dominion University</h3>
+                    <h4>Bachelor of Science in Computer Science</h4>
+                    <p class="education-period">Expected Graduation: 2027</p>
+                    <p>Norfolk, VA</p>
+                </div>
+                <div class="education-item">
+                    <h3>Tidewater Community College</h3>
+                    <h4>Associate of Science in Business</h4>
+                    <p class="education-period">Graduated: 2024</p>
+                    <p>Virginia Beach, VA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section - UPDATED: Added links to certifications -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="cert-container">
+                <div class="cert-item">
+                    <h3><a href="https://www.credly.com/badges/81edc985-68dc-4745-9266-14a63d9101ad/public_url" target="_blank">CompTIA A+</a></h3>
+                    <p class="cert-date">Completed: April 2025</p>
+                    <p class="cert-id">Code: KMFDYD8SZFFQQPKG</p>
+                </div>
+                <div class="cert-item">
+                    <h3><a href="https://www.coursera.org/account/accomplishments/verify/Y4TM5S85CHQG" target="_blank">Google Foundations of Digital Marketing and E-commerce</a></h3>
+                    <p class="cert-date">Completed: December 2022</p>
+                    <p class="cert-id">Credential ID: Y4TM5S85CHQG</p>
+                </div>
+                <div class="cert-item">
+                    <h3><a href="https://www.coursera.org/account/accomplishments/verify/KGR3UR3B4CVJ" target="_blank">Google Make the Sale: Build, Launch, and Manage E-commerce Stores</a></h3>
+                    <p class="cert-date">Completed: December 2022</p>
+                    <p class="cert-id">Credential ID: KGR3UR3B4CVJ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p>(757) 831-8204</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p>parkervincent900@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Location</h4>
+                            <p>Virginia Beach, VA</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/parker-vincent-aa245a236/" target="_blank">View Profile</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" action="mailto:parkervincent900@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Parker Vincent. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/parker-vincent-aa245a236/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Typing Effect
+        const typingTextElement = document.getElementById('typing-text');
+        const texts = [
+            'System Administrator',
+            'Network Specialist',
+            'Hardware Troubleshooter',
+            'CompTIA A+ Certified'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 100;
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingDelay = 50;
+            } else {
+                typingTextElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingDelay = 150;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingDelay = 1000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingDelay = 500;
+            }
+            
+            setTimeout(type, typingDelay);
+        }
+        
+        // Start typing effect
+        setTimeout(type, 1000);
+        
+        // Timeline Animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        function showTimelineItems() {
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight - 100) {
+                    item.classList.add('animate');
+                }
+            });
+        }
+        
+        // Initial check on page load
+        showTimelineItems();
+        
+        // Check on scroll
+        window.addEventListener('scroll', showTimelineItems);
+        
+        // Form Submission (placeholder - would need backend)
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            // Form will be submitted via mailto: link
+            // This code still runs but we don't need to prevent default
+            // or show the alert since the mail client will handle it
+            
+            // If you want to add form validation before submission:
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
+                alert('Please fill in all fields before submitting.');
+            }
+        });
+        
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                navList.classList.remove('active');
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
